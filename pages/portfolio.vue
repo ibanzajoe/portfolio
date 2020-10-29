@@ -1,11 +1,11 @@
 <template>
   <div class="portfolio pb-20">
-    <h2 class="mt-24 text-5xl font-extrabold text-center">My Recent Works</h2>
+    <h2 class="mt-24 text-5xl font-extrabold text-center">Works</h2>
 
-    <div class="container px-8 mx-auto mt-24 divide-y-2">
+    <div class="container px-4 mx-auto mt-24 divide-y-2 sm:px-8">
 
       <div class="listicle border-t-2 pt-10">
-        <div class="flex items-center justify-between">
+        <div class="heading flex items-center justify-between">
           <div>
             <h2 class="text-3xl font-bold">Listicle Clothing</h2>
             <p class="text-xl font-base">E-commerce website for Women's Apparel</p>
@@ -22,7 +22,7 @@
         
         <img class="main-image mt-8 shadow-md" :src="listicleMain" />
         
-        <div class="flex pt-16">
+        <div class="about-image flex pt-16">
           <div class="left-block">
             <h2 class="text-3xl font-bold">About the Project</h2>
             <p class="text-xl font-base">
@@ -64,7 +64,7 @@
       </div>
 
       <div class="mylookingglass pt-20">
-        <div class="flex items-center justify-between">
+        <div class="heading flex items-center justify-between">
           <div>
             <h2 class="text-3xl font-bold">My Looking Glass</h2>
             <p class="text-xl font-base">User Feedback Marketing Platform</p>
@@ -81,7 +81,7 @@
         
         <img class="main-image mt-8 shadow-md" :src="MlgMain" />
         
-        <div class="flex py-16">
+        <div class="about-image flex py-16">
           <div class="left-block">
             <h2 class="text-3xl font-bold">About the Project</h2>
             <p class="text-xl font-base">
@@ -126,7 +126,7 @@
       </div>
 
       <div class="funkhaus pt-20">
-        <div class="flex items-center justify-between">
+        <div class="heading flex items-center justify-between">
           <div>
             <h2 class="text-3xl font-bold">Funkhaus - Component Factory</h2>
             <p class="text-xl font-base">Front end freelance work creating components for various web projects</p>
@@ -136,7 +136,7 @@
         
         <img class="main-image mt-8 shadow-md" :src="FunkMain" />
         
-        <div class="flex py-16">
+        <div class="about-image flex py-16">
           <div class="left-block">
             <h2 class="text-3xl font-bold">About the Project</h2>
             <p class="text-xl font-base">
@@ -180,7 +180,7 @@
       </div>
 
       <div class="teetime pt-20">
-        <div class="flex items-center justify-between">
+        <div class="heading flex items-center justify-between">
           <div>
             <h2 class="text-3xl font-bold">The Reserver - Tee Time</h2>
             <p class="text-xl font-base">Reservation Platform for Disc Golf Course</p>
@@ -197,7 +197,7 @@
         
         <img class="main-image mt-8 shadow-md" :src="TeetimeMain" />
         
-        <div class="flex py-16">
+        <div class="about-image flex py-16">
           <div class="left-block">
             <h2 class="text-3xl font-bold">About the Project</h2>
             <p class="text-xl font-base">
@@ -246,7 +246,7 @@
 
 
       <div class="fanbird pt-20">
-        <div class="flex items-center justify-between">
+        <div class="heading flex items-center justify-between">
           <div>
             <h2 class="text-3xl font-bold">FANBIRD</h2>
             <p class="text-xl font-base">A new marketing platform</p>
@@ -263,7 +263,7 @@
         
         <img class="main-image mt-8 shadow-md" :src="FanbirdMain" />
         
-        <div class="flex py-16">
+        <div class="about-image flex py-16">
           <div class="left-block">
             <h2 class="text-3xl font-bold">About the Project</h2>
             <p class="text-xl font-base">
@@ -481,9 +481,33 @@ export default {
 
 .pill {
   padding: 8px 16px;
-  margin: 0 8px;
+  margin: 4px 8px;
   border-radius: 100px;
   color: white;
+  display: inline-block;
+}
+
+@media screen and (max-width: 768px) {
+  .about-image {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .heading {
+    flex-direction: column;
+    text-align: center;
+  }
+  .heading span, .heading button {
+    width: 100%;
+  }
+  .heading button {
+    margin-top: 8px;
+    justify-content: center;
+  }
+  .image-spacer {
+    min-height: 375px;
+  }
 }
 
 .fade-enter, .fade-leave-to {
