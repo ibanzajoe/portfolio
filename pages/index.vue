@@ -1,7 +1,7 @@
 <template>
   <div class="w-100">
     <div class="hero py-64 flex items-center justify-center">
-      <div class="container">
+      <div class="container px-2">
         <h2 
           class="mb-4 text-center text-4xl tracking-tight leading-tight font-extrabold text-gray-900
             sm:text-6xl lg:text-5xl xl:text-6xl"

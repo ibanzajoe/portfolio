@@ -179,6 +179,66 @@
         
       </div>
 
+      <div class="fanbird pt-20">
+        <div class="heading flex items-center justify-between">
+          <div>
+            <h2 class="text-3xl font-bold">FANBIRD</h2>
+            <p class="text-xl font-base">A new marketing platform</p>
+          </div>
+          <span class="inline-flex shadow-sm view-button">
+            <button @click="sendTo('https://fanbird.co')" type="button" class="inline-flex items-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150">
+              <!-- Heroicon name: mail -->
+              Visit Website
+
+            </button>
+          </span>
+        </div>
+
+        
+        <img class="main-image mt-8 shadow-md" :src="FanbirdMain" />
+        
+        <div class="about-image flex py-16">
+          <div class="left-block">
+            <h2 class="text-3xl font-bold">About the Project</h2>
+            <p class="text-xl font-base">
+              Fanbird is a marketing platform where businesses can promote their brand and receive valuable customer information.  Users can win points by completing missions and these points can be used to exchange for prizes and products.  
+            </p>
+            <p class="text-xl font-base mt-4">
+              Fanbird is still in progress.
+            </p>
+          </div>
+          <div class="right-block flex items-center justify-end">
+            <div class="image-spacer">
+                <p class='text-center mb-4'>Click to flip through the images</p>
+                <transition-group 
+                  name="fade" 
+                  mode="in-out"
+                  class="transition-block"
+                >
+                  <img 
+                    v-for="(image, index) in FanbirdImages"
+                    v-show="index == currentFanbird" 
+                    :key="`listicle-${index}`"
+                    @click="switchFanBirdImage(index, FanbirdImages)"
+                    class="image-show cursor-pointer" 
+                    :src="image" 
+                  />
+                </transition-group>
+                
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="technology mb-16">
+          <h2 class="text-2xl font-semibold mb-4">Tech List:</h2>
+          <template v-for="(tech, index) in technology.teetime">
+            <span :key="`listicle-tech-${index}`" class="pill" :style="`background-color: ${pillBGColor(tech)}`">{{tech}}</span>
+          </template>
+        </div>
+        
+      </div>
+
       <div class="teetime pt-20">
         <div class="heading flex items-center justify-between">
           <div>
@@ -245,65 +305,7 @@
       </div>
 
 
-      <div class="fanbird pt-20">
-        <div class="heading flex items-center justify-between">
-          <div>
-            <h2 class="text-3xl font-bold">FANBIRD</h2>
-            <p class="text-xl font-base">A new marketing platform</p>
-          </div>
-          <span class="inline-flex shadow-sm view-button">
-            <button @click="sendTo('https://fanbird.co')" type="button" class="inline-flex items-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150">
-              <!-- Heroicon name: mail -->
-              Visit Website
-
-            </button>
-          </span>
-        </div>
-
-        
-        <img class="main-image mt-8 shadow-md" :src="FanbirdMain" />
-        
-        <div class="about-image flex py-16">
-          <div class="left-block">
-            <h2 class="text-3xl font-bold">About the Project</h2>
-            <p class="text-xl font-base">
-              Fanbird is a marketing platform where businesses can promote their brand and receive valuable customer information.  Users can win points by completing missions and these points can be used to exchange for prizes and products.  
-            </p>
-            <p class="text-xl font-base mt-4">
-              Fanbird is still in progress.
-            </p>
-          </div>
-          <div class="right-block flex items-center justify-end">
-            <div class="image-spacer">
-                <p class='text-center mb-4'>Click to flip through the images</p>
-                <transition-group 
-                  name="fade" 
-                  mode="in-out"
-                  class="transition-block"
-                >
-                  <img 
-                    v-for="(image, index) in FanbirdImages"
-                    v-show="index == currentFanbird" 
-                    :key="`listicle-${index}`"
-                    @click="switchFanBirdImage(index, FanbirdImages)"
-                    class="image-show cursor-pointer" 
-                    :src="image" 
-                  />
-                </transition-group>
-                
-              
-            </div>
-          </div>
-        </div>
-
-        <div class="technology mb-16">
-          <h2 class="text-2xl font-semibold mb-4">Tech List:</h2>
-          <template v-for="(tech, index) in technology.teetime">
-            <span :key="`listicle-tech-${index}`" class="pill" :style="`background-color: ${pillBGColor(tech)}`">{{tech}}</span>
-          </template>
-        </div>
-        
-      </div>
+      
 
     </div>
   </div>
